@@ -8,22 +8,16 @@
 //------------------------------------------------------------------------------
 
 using System;
-#if !EFOLD
-    using System.Data.Entity.Core.EntityClient;
-    using System.Data.Entity.Core.Objects;
-#else
-    using System.Data.EntityClient;
-    using System.Data.Objects;
-#endif
+using System.Data.Objects;
+using System.Data.EntityClient;
 
 namespace Effort.Test.Data.Northwind
 {
     public class NorthwindObjectContext : ObjectContext
     {
         public const string ContainerName = "NorthwindObjectContext";
-
-        public const string DefaultConnectionStringName = "NorthwindObjectContext";
-        public const string DefaultConnectionString = "name=" + DefaultConnectionStringName;
+    
+    	public const string DefaultConnectionString = "name=NorthwindObjectContext";
     
         #region Constructors
     
@@ -110,6 +104,7 @@ namespace Effort.Test.Data.Northwind
         private ObjectSet<Territory> _territories;
 
         #endregion
+
     
     }
 }
